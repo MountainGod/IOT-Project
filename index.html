@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
 	
-	<link rel="stylesheet" href="/css/bootstrap.css">
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 	<link rel="stylesheet" href="/css/shared.css"/>
 	
@@ -17,7 +17,7 @@
 	<div class="container-fluid">
 		<!-- Logo -->
 		<a class="navbar-brand" href="/" id="nav-logo">
-			<img src="img/logo.svg" alt="logo">
+			<img src="/img/logo.svg" alt="logo">
 		</a>
 		
 		<!-- Toggle Icon -->
@@ -30,11 +30,9 @@
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			
 			<!-- Button section -->
-			<div class="navbar-nav me-auto">
+			<div class="navbar-nav">
 				<!-- Home -->
 				<a class="nav-link active" aria-current="page" href="#">Home</a>
-				<!-- Books -->
-				<a class="nav-link" href="/a1">a1</a>
 				<!-- "Connect" dropdown -->
 				<div class="nav-item dropdown">
 					<!-- Dropdown toggle -->
@@ -60,12 +58,6 @@
 						</li>
 					</ul>
 				</div>
-				<!-- Printers - unavailable -->
-				<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Printers</a>
-				<!-- Locations -->
-				<a class="nav-link" href="/a3">Locations</a>
-				<!-- Contact Us -->
-				<a class="nav-link" href="/contact">Contact Us</a>
 				<!-- Log Off - only visible when logged in -->
 				<form class="nav-item" id="logOffForm" hidden>
 					<button type="button" class="btn btn-outline-danger"
@@ -73,6 +65,14 @@
 						Log Off
 					</button>
 				</form>
+			</div>
+			<!-- Spacer -->
+			<div class="navbar-nav mx-auto"></div>
+			<div class="navbar-nav">
+				<!-- Contact Us -->
+				<a class="nav-link" href="/contact">Contact Us</a>
+				<!-- About -->
+				<a class="nav-link" href="/about">About</a>
 			</div>
 		</div>
 	</div>
@@ -91,7 +91,7 @@
 </div>
 
 
-<script src="/js/bootstrap.js"></script>
+<script src="/js/bootstrap.bundle.min.js"></script>
 <script src="/js/shared.js"></script>
 </body>
 </html>
