@@ -1,4 +1,5 @@
 function insertNavbar(activeTab) {
+	activeTab = activeTab.toLowerCase();
 	document.getElementById("navbarMain").innerHTML =
 		`
 		<div class="container-fluid">
@@ -19,27 +20,26 @@ function insertNavbar(activeTab) {
 		<!-- Button section -->
 		<div class="navbar-nav">
 		<!-- Home -->
-		<a class="nav-link${activeTab === "Home" ? " active" : ""}" href="/IOT-Project/">Home</a>
+		<a class="nav-link${activeTab === "home" ? " active" : ""}" href="/IOT-Project/">Home</a>
 		<!-- "Connect" dropdown -->
 		<div class="nav-item dropdown">
 		<!-- Dropdown toggle -->
-		<a class="nav-link${activeTab === "Connect" ? " active" : ""} dropdown-toggle" href="#" id="navbarDropdown" role="button"
-		   data-bs-toggle="dropdown">
-		Connect
-		</a>
+		<a class="nav-link${activeTab === "log in" || activeTab === "sign up" || activeTab === "admin access"
+							? " active" : ""} dropdown-toggle"
+				href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">Connect</a>
 		<!-- Dropdown menu -->
 		<ul class="dropdown-menu dropdown-menu-dark">
 		<li>
-		<a class="dropdown-item${activeTab === "Log In" ? " active" : ""}" href="/IOT-Project/login/">Log In</a>
+		<a class="dropdown-item${activeTab === "log In" ? " active" : ""}" href="/IOT-Project/login/">Log In</a>
 		</li>
 		<li>
-		<a class="dropdown-item${activeTab === "Sign Up" ? " active" : ""}" href="/IOT-Project/sign-up/">Sign Up</a>
+		<a class="dropdown-item${activeTab === "sign Up" ? " active" : ""}" href="/IOT-Project/sign-up/">Sign Up</a>
 		</li>
 		<li>
 		<hr class="dropdown-divider">
 		</li>
 		<li>
-		<a class="dropdown-item${activeTab === "Admin Access" ? " active" : ""}" href="/IOT-Project/admin/">
+		<a class="dropdown-item${activeTab === "admin Access" ? " active" : ""}" href="/IOT-Project/admin/">
 		<i class="bi bi-key-fill"></i> Admin Access
 		</a>
 		</li>
@@ -57,9 +57,9 @@ function insertNavbar(activeTab) {
 		<div class="navbar-nav mx-auto"></div>
 		<div class="navbar-nav">
 		<!-- Contact Us -->
-		<a class="nav-link${activeTab === "Contact Us" ? " active" : ""}" href="/IOT-Project/contact/">Contact Us</a>
+		<a class="nav-link${activeTab === "contact us" ? " active" : ""}" href="/IOT-Project/contact/">Contact Us</a>
 		<!-- About -->
-		<a class="nav-link${activeTab === "About" ? " active" : ""}" href="/IOT-Project/about/">About</a>
+		<a class="nav-link${activeTab === "about" ? " active" : ""}" href="/IOT-Project/about/">About</a>
 		</div>
 		</div>
 		</div>
