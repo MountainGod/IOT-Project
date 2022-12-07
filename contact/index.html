@@ -31,10 +31,40 @@
 	<h2>You can use the following methods:</h2>
 </div>
 
+<form class="container" action="#" method="post">
+	<div class="mb-3">
+		<div class="form-check form-check-inline">
+			<input class="form-check-input" type="radio" name="contact method" id="useMail" checked>
+			<label class="form-check-label" for="useMail">Email</label>
+		</div>
+		<div class="form-check form-check-inline">
+			<input class="form-check-input" tabindex="-1" type="radio" name="contact method" id="useSMS" disabled>
+			<label class="form-check-label" tabindex="-1" for="useSMS">SMS</label>
+		</div>
+		<div class="form-check form-check-inline">
+			<input class="form-check-input" tabindex="-1" type="radio" name="contact method" id="useFax" disabled>
+			<label class="form-check-label" tabindex="-1" for="useFax">Fax</label>
+		</div>
+	</div>
+	<div class="mb-3">
+		<label for="email" class="form-label">Your Email address</label>
+		<input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+		<div id="emailHelp" class="form-text">This will be the address we will mail back to. We'll never share your
+			email with anyone else.
+		</div>
+	</div>
+	<div class="mb-3">
+		<label for="message" class="form-label">Your message</label>
+		<textarea class="form-control" name="message" id="message" cols="30" rows="5"></textarea>
+	</div>
+	<button type="submit" class="btn btn-primary" onclick="sendMessage();">Submit</button>
+</form>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"></script>
 <script src="/js/navbar.js"></script>
 <script src="/js/shared.js"></script>
+<script src="/js/contact.js"></script>
 </body>
 </html>
