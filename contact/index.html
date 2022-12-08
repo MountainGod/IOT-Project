@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-	
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-	      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
-	<link rel="stylesheet" href="/css/shared.css"/>
-	
-	<link rel="icon" type="image/x-icon" href="/img/logo.svg">
-	<title>Contact Us</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/shared.css"/>
+
+    <link rel="icon" type="image/x-icon" href="/img/logo.svg">
+    <title>Contact Us</title>
 </head>
 <body class="bg-dark text-white">
 
@@ -19,45 +19,44 @@
 <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark" id="navbarMain"></nav>
 
 <div class="jumbo mb-3 p-5 bg-dark text-white rounded-0 text-center">
-	<h1 class="display-1">
-		Contact Us
-	</h1>
-	<p>
-		We are open to feedback <span class="bi bi-emoji-smile"></span>
-	</p>
+    <h1 class="display-1">
+        Contact Us
+    </h1>
+    <p>
+        We are open to feedback <span class="bi bi-emoji-smile"></span>
+    </p>
 </div>
 
-<div class="container text-center">
-	<h2>You can use the following methods:</h2>
-</div>
+<form class="container d-flex flex-column" action="#" method="post">
+    <!--	Method select	-->
+    <div class="mb-3 align-self-center text-center">
+        <div class="form-check">
+            <h4 class="h4 text-decoration-underline">Use the following methods</h4>
+            <div class="btn-group align-self-center" role="group">
+                <input type="radio" class="btn-check" name="sendMethod" id="emailRadio" checked>
+                <label class="btn btn-outline-info" for="emailRadio">Email</label>
 
-<form class="container" action="#" method="post">
-	<div class="mb-3">
-		<div class="form-check form-check-inline">
-			<input class="form-check-input" type="radio" name="contact method" id="useMail" checked>
-			<label class="form-check-label" for="useMail">Email</label>
-		</div>
-		<div class="form-check form-check-inline">
-			<input class="form-check-input" tabindex="-1" type="radio" name="contact method" id="useSMS" disabled>
-			<label class="form-check-label" tabindex="-1" for="useSMS">SMS</label>
-		</div>
-		<div class="form-check form-check-inline">
-			<input class="form-check-input" tabindex="-1" type="radio" name="contact method" id="useFax" disabled>
-			<label class="form-check-label" tabindex="-1" for="useFax">Fax</label>
-		</div>
-	</div>
-	<div class="mb-3">
-		<label for="email" class="form-label">Your Email address</label>
-		<input type="email" class="form-control" id="email" aria-describedby="emailHelp">
-		<div id="emailHelp" class="form-text">This will be the address we will mail back to. We'll never share your
-			email with anyone else.
-		</div>
-	</div>
-	<div class="mb-3">
-		<label for="message" class="form-label">Your message</label>
-		<textarea class="form-control" name="message" id="message" cols="30" rows="5"></textarea>
-	</div>
-	<button type="submit" class="btn btn-primary" onclick="sendMessage();">Submit</button>
+                <input type="radio" class="btn-check" name="sendMethod" id="SMSRadio" disabled>
+                <label class="btn btn-outline-info" for="SMSRadio">SMS</label>
+
+                <input type="radio" class="btn-check" name="sendMethod" id="FaxRadio" disabled>
+                <label class="btn btn-outline-info" for="FaxRadio">Fax </label>
+            </div>
+        </div>
+    </div>
+    <!--    Email Form  -->
+    <div class="mb-3">
+        <label for="email" class="form-label">Your Email address</label>
+        <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">This will be the address we will mail back to. We'll never share your
+            email with anyone else.
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="message" class="form-label">Your message</label>
+        <textarea class="form-control" name="message" id="message" cols="30" rows="5"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary" onclick="sendMessage();">Submit</button>
 </form>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
