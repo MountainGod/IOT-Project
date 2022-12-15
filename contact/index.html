@@ -29,34 +29,72 @@
 
 <form class="container d-flex flex-column" action="#" method="post">
     <!--	Method select	-->
-    <div class="mb-3 align-self-center text-center">
-        <div class="form-check">
-            <h4 class="h4 text-decoration-underline">Use the following methods</h4>
-            <div class="btn-group align-self-center" role="group">
-                <input type="radio" class="btn-check" name="sendMethod" id="emailRadio" checked>
+    <div class="mb-3 text-center">
+        <div class="row p-0 form-check">
+            <h4 class="h4 text-decoration-underline">Use one of the following methods</h4>
+            <div class="btn-group" role="group">
+                <input type="radio" class="btn-check" name="sendMethod" id="emailRadio" checked
+                 onclick="hideAllForms(); showForm('emailFormWrapper');">
                 <label class="btn btn-outline-info" for="emailRadio">Email</label>
 
-                <input type="radio" class="btn-check" name="sendMethod" id="SMSRadio" disabled>
+                <input type="radio" class="btn-check" name="sendMethod" id="SMSRadio"
+                       onclick="hideAllForms(); showForm('SMSFormWrapper');">
                 <label class="btn btn-outline-info" for="SMSRadio">SMS</label>
 
-                <input type="radio" class="btn-check" name="sendMethod" id="FaxRadio" disabled>
-                <label class="btn btn-outline-info" for="FaxRadio">Fax </label>
+                <input type="radio" class="btn-check" name="sendMethod" id="faxRadio"
+                       onclick="hideAllForms(); showForm('faxFormWrapper');">
+                <label class="btn btn-outline-info" for="faxRadio">Fax</label>
             </div>
         </div>
     </div>
     <!--    Email Form  -->
-    <div class="mb-3">
-        <label for="email" class="form-label">Your Email address</label>
-        <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
-        <div id="emailHelp" class="form-text">This will be the address we will mail back to. We'll never share your
-            email with anyone else.
+    <div id="emailFormWrapper">
+        <div class="mb-3">
+            <label for="emailInput" class="form-label">Your email address</label>
+            <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">
+                This will be the address we will mail back to.
+                We'll never share your email address with anyone else.
+            </div>
         </div>
+        <div class="mb-3">
+            <label for="emailContent" class="form-label">Your message</label>
+            <textarea class="form-control" name="message" id="emailContent" cols="30" rows="5"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" onclick="sendMessage();">Submit</button>
     </div>
-    <div class="mb-3">
-        <label for="message" class="form-label">Your message</label>
-        <textarea class="form-control" name="message" id="message" cols="30" rows="5"></textarea>
+    <!--    SMS Form  -->
+    <div  id="SMSFormWrapper">
+        <div class="mb-3">
+            <label for="SMSInput" class="form-label">Your phone number</label>
+            <input type="email" class="form-control" id="SMSInput" aria-describedby="emailHelp">
+            <div id="SMSHelp" class="form-text">
+                This will be the phone number we will respond to.
+                We'll never share your number with anyone else.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="SMSContent" class="form-label">Your message</label>
+            <textarea class="form-control" name="message" id="SMSContent" cols="30" rows="5"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" onclick="sendMessage();">Submit</button>
     </div>
-    <button type="submit" class="btn btn-primary" onclick="sendMessage();">Submit</button>
+    <!--    Fax Form  -->
+    <div  id="faxFormWrapper">
+        <div class="mb-3">
+            <label for="faxInput" class="form-label">Your fax number</label>
+            <input type="email" class="form-control" id="faxInput" aria-describedby="emailHelp">
+            <div id="faxHelp" class="form-text">
+                This will be the fax number we will respond to.
+                We'll never share your number with anyone else.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="faxContent" class="form-label">Your message</label>
+            <textarea class="form-control" name="message" id="faxContent" cols="30" rows="5"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" onclick="sendMessage();">Submit</button>
+    </div>
 </form>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
