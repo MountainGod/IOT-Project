@@ -1,0 +1,7 @@
+{
+  "name": "IOT-Project",
+  "version": "1.0.0",
+  "dependencies": {
+    "firebase": "^9.16.0"
+  }
+}
