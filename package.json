@@ -1,7 +1,11 @@
 {
-  "name": "IOT-Project",
-  "version": "1.0.0",
-  "dependencies": {
+  "name":            "iot-project",
+  "version":         "1.0.0",
+  "dependencies":    {
     "firebase": "^9.16.0"
+  },
+  "devDependencies": {
+    "webpack":     "^5.75.0",
+    "webpack-cli": "^5.0.1"
   }
 }

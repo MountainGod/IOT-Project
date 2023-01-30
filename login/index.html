@@ -4,35 +4,52 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-	
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-	      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 	<link rel="stylesheet" href="/css/shared.css"/>
-	
+
 	<link rel="icon" type="image/x-icon" href="/img/logo.svg">
 	<title>Log In</title>
 </head>
 <body class="bg-dark text-white">
 
 <!-- 	filled in with js on load. -->
-<nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark" id="navbarMain"></nav>
+<nav class="navbar sticky-top navbar-expand-md navbar-dark" id="navbarMain"></nav>
 
-<div class="jumbo mb-3 p-5 bg-dark text-white rounded-0 text-center">
-	<h1 class="display-1">
+<div class="jumbo mb-3 text-center">
+	<h1 class="display-1 text-info">
 		Log In
 	</h1>
 	<small class="small">
-		If you <i class="text-warning">don't</i> have an account, <a href="/IOT-Project/sign-up/" class="link-success">sign up here!</a>
+		If you <i class="text-warning">don't</i> have an account,
+		<a href="/IOT-Project/sign-up/" class="link-success">sign up here!</a>
 	</small>
 </div>
 
-<!--TODO: add login form-->
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-        crossorigin="anonymous"></script>
-<script src="/js/navbar.js"></script>
-<script src="/js/shared.js"></script>
+<form id="loginForm" class="container text-black" action="/IOT-Project/" method="post">
+	<div class="row form-floating mb-3 mt-3">
+		<input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required/>
+		<label for="email">Enter email</label>
+	</div>
+
+	<div class="row form-floating mb-3">
+		<input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password" required/>
+		<label for="pwd">Enter password</label>
+	</div>
+
+	<div class="row align-items-center justify-content-between">
+		<button type="button" class="btn btn-primary col-auto" id="loginBtn">
+			Submit
+		</button>
+		<span class="text-danger col-auto" id="loginWrongText" hidden>Wrong email or password. Please try again.</span>
+	</div>
+</form>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/dist/navbar.bundle.js"></script>
+<script src="/dist/shared.bundle.js"></script>
 </body>
 </html>

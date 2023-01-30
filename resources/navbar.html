@@ -3,16 +3,15 @@
 	<a class="navbar-brand" href="/IOT-Project/" id="nav-logo">
 		<img src="/img/logo.svg" alt="logo" height="50rem">
 	</a>
-	
+
 	<!-- Toggle Icon -->
 	<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 	        data-bs-target="#navbarSupportedContent">
 		<span class="navbar-toggler-icon"></span>
 	</button>
-	
+
 	<!-- Toggleable Content -->
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
-		
 		<!-- Button section -->
 		<div class="navbar-nav">
 			<!-- Home -->
@@ -30,20 +29,11 @@
 					<li>
 						<a class="dropdown-item" href="/IOT-Project/sign-up">Sign Up</a>
 					</li>
-					<li>
-						<hr class="dropdown-divider">
-					</li>
-					<li>
-						<a class="dropdown-item" href="/IOT-Project/admin/">
-							<i class="bi bi-key-fill"></i> Admin Access
-						</a>
-					</li>
 				</ul>
 			</div>
 			<!-- Log Off - only visible when logged in -->
 			<form class="nav-item" id="logOffForm" hidden>
-				<button type="button" class="btn btn-outline-danger"
-				        onclick="logOff(); this.parentElement.hidden = true;">
+				<button type="button" class="btn btn-outline-danger">
 					Log Off
 				</button>
 			</form>
@@ -58,3 +48,4 @@
 		</div>
 	</div>
 </div>
+

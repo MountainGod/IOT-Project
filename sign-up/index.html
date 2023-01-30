@@ -4,22 +4,21 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-	
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-	      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 	<link rel="stylesheet" href="/css/shared.css"/>
-	
+
 	<link rel="icon" type="image/x-icon" href="/img/logo.svg">
 	<title>Sign Up</title>
 </head>
 <body class="bg-dark text-white">
 
 <!-- 	filled in with js on load. -->
-<nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark" id="navbarMain"></nav>
+<nav class="navbar sticky-top navbar-expand-md navbar-dark" id="navbarMain"></nav>
 
-<div class="jumbo mb-3 p-5 bg-dark text-white rounded-0 text-center">
-	<h1 class="display-1">
+<div class="jumbo mb-3 text-center">
+	<h1 class="display-1 text-info">
 		Sign Up
 	</h1>
 	<small class="small">
@@ -27,13 +26,51 @@
 	</small>
 </div>
 
-<!--TODO: add sign up form-->
 
+<div class="container-md">
+	<form id="signUpForm" class="text-black" action="/IOT-Project/" method="post">
+		<div class="form-floating mb-3 mt-3">
+			<input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required/>
+			<label for="email">Email</label>
+		</div>
+		<p class="p text-danger mb-3" id="emailInvalid" hidden>
+			Email address invalid.
+		</p>
+		<p class="p text-danger mb-3" id="emailExists" hidden>
+			A user with this email address already exists.
+		</p>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-        crossorigin="anonymous"></script>
-<script src="/js/navbar.js"></script>
-<script src="/js/shared.js"></script>
+		<div class="form-floating mt-3 mb-3">
+			<input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password" required/>
+			<label for="pwd">Password</label>
+		</div>
+		<p class="p text-danger mb-3" id="pwdInvalid" hidden>
+			Password invalid.
+		</p>
+
+		<div class="container-fluid mb-3 text-white" id="pwdGuide">
+			<h6 class="h6">A password:</h6>
+			<ul>
+				<li class="text-danger" id="pwdLengthListItem">
+					<strong>must</strong> be 8 or more characters long.
+				</li>
+				<li class="text-danger" id="pwdAlphanumericListItem">
+					<strong>must</strong> include a number and a letter.
+				</li>
+				<li class="text-warning" id="pwdSpecialListItem">
+					is <strong>recommended</strong> to use a special characters: {}[](),.|^&*%$#@!~ and so on.
+				</li>
+			</ul>
+		</div>
+
+		<button type="button" class="btn btn-primary disabled" id="signUpBtn">
+			Submit
+		</button>
+	</form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/dist/navbar.bundle.js"></script>
+<script src="/dist/shared.bundle.js"></script>
 </body>
 </html>
