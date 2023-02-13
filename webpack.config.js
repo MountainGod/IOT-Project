@@ -1,40 +1,56 @@
 const path = require("path");
 
+const devMode = "development";
+
 module.exports = [
 	{
-		mode:    "development",
+		name:    "auth",
 		entry:   "./js/auth.js",
 		output:  {
 			path:     path.resolve(__dirname, "dist"),
 			filename: "auth.bundle.js",
 		},
 		devtool: "eval-source-map",
+		mode:    devMode,
 	},
 	{
-		mode:    "development",
+		name:    "navbar",
 		entry:   "./js/navbar.js",
 		output:  {
 			path:     path.resolve(__dirname, "dist"),
 			filename: "navbar.bundle.js",
 		},
 		devtool: "eval-source-map",
+		mode:    devMode,
 	},
 	{
-		mode:    "development",
+		name:    "contact",
 		entry:   "./js/contact.js",
 		output:  {
 			path:     path.resolve(__dirname, "dist"),
 			filename: "contact.bundle.js",
 		},
 		devtool: "eval-source-map",
+		mode:    devMode,
 	},
 	{
-		mode:    "development",
+		name:    "cameras",
+		entry:   "./js/cameras.js",
+		output:  {
+			path:     path.resolve(__dirname, "dist"),
+			filename: "cameras.bundle.js",
+		},
+		devtool: "eval-source-map",
+		mode:    devMode,
+	},
+	{
+		name:    "shared",
 		entry:   "./js/shared.js",
 		output:  {
 			path:     path.resolve(__dirname, "dist"),
 			filename: "shared.bundle.js",
 		},
 		devtool: "eval-source-map",
+		mode:    devMode,
 	},
 ];

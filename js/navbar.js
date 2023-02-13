@@ -6,7 +6,8 @@ import {logOff, isLoggedIn} from "./auth";
  */
 
 function insertNavbar(activeTab) {
-	activeTab                                       = activeTab.toLowerCase();
+	activeTab = activeTab.toLowerCase();
+	
 	document.getElementById("navbarMain").innerHTML =
 		`
 		<div class="container-fluid">
@@ -27,6 +28,11 @@ function insertNavbar(activeTab) {
                 <div class="navbar-nav">
                     <!-- Home -->
                     <a class="nav-link${activeTab === "home" ? " active" : ""}" href="/IOT-Project/">Home</a>
+					<!-- Cameras -->
+                    <a class="nav-link disabled${activeTab === "cameras" ? " active" : ""}" href="/IOT-Project/cameras/"
+                       id="camNavLink">
+                       Cameras
+                    </a>
                     <!-- "Connect" dropdown -->
                     <div class="nav-item dropdown">
                         <!-- Connect Dropdown toggle -->
@@ -67,20 +73,24 @@ insertNavbar(document.title);
 const connectDropdownBtn = document.getElementById("connectDropdownButton");
 const logOffForm         = document.getElementById("logOffForm");
 const logOffBtn          = document.getElementById("logOffBtn");
+const camNavLink         = document.getElementById("camNavLink");
 
 logOffBtn.addEventListener("click", function () {
 	logOff().then(() => {
 		logOffBtn.hidden = true;
 		connectDropdownBtn.classList.remove("disabled");
+		camNavLink.classList.add("disabled");
 	});
 	
 });
 
 /**
- * On each page with a navbar, the log-off button is hidden and the connect dropdown is enabled by default.
- * If a user is logged in, these states need to be inverted.
+ * When a user is logged in:
+ * Cameras link is functional, log off button shown, connect dropdown disabled.
+ * When no user is logged in, the opposite is true.
  */
 if (isLoggedIn()) {
 	logOffForm.hidden = false;
 	connectDropdownBtn.classList.add("disabled");
+	camNavLink.classList.remove("disabled");
 }

@@ -68,6 +68,14 @@ export function getUserEmail() {
 	return JSON.parse(window.sessionStorage.getItem(userKey)).email;
 }
 
+/**
+ * Fetches the current logged in user's ID.
+ * @returns {string} the user's ID.
+ */
+export function getUserID() {
+	return JSON.parse(window.sessionStorage.getItem(userKey)).uid;
+}
+
 // Page specific code
 /**
  * Change color of email input element and present a message element when a bad email is entered.
