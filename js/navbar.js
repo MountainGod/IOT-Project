@@ -49,7 +49,7 @@ function insertNavbar(activeTab) {
                         </ul>
                     </div>
                     <!-- Log Off - only visible when logged in -->
-                    <form class="nav-item" id="logOffForm" hidden>
+                    <form class="nav-item" id="logOffForm" action="/IOT-Project/" hidden>
                         <button type="button" class="btn btn-outline-danger" id="logOffBtn">
                             Log Off
                         </button>
@@ -80,6 +80,9 @@ logOffBtn.addEventListener("click", function () {
 		logOffBtn.hidden = true;
 		connectDropdownBtn.classList.remove("disabled");
 		camNavLink.classList.add("disabled");
+		if (document.title.toLowerCase() === "cameras") {
+			logOffForm.submit();
+		}
 	});
 	
 });

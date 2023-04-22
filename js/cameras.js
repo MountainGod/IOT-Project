@@ -36,10 +36,14 @@ async function getCamIP(camID) {
 
 /**
  * Create a button for a camera
+ * Clicking on that button will change the hidden camera stream modal.
  * @param camID the ID of the camera
  */
 function createCamButton(camID) {
 	const cameraSelectionRow = document.getElementById("cameraSelectionRow");
+	const video              = document.getElementById("videoStream");
+	const img                = document.getElementById("camStream");
+	img.src                  = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/SMPTE_Color_Bars.svg/1008px-SMPTE_Color_Bars.svg.png"; //"http://" + camIP + ":81/stream";
 	
 	let newCamCol = document.createElement("div");
 	newCamCol.classList.add("col-4");
@@ -57,12 +61,25 @@ function createCamButton(camID) {
 	
 	newCamBtn.addEventListener("click", () => {
 		const modalTitle = document.getElementById("camModalTitle");
-		const modalFrame = document.getElementById("camFrame");
 		
 		modalTitle.innerText = "Camera " + camID;
 		getCamIP(camID)
 		.then((result) => {
-			modalFrame.src = "http://" + result + ":81/stream";
+			navigator.mediaDevices
+			         .getUserMedia({
+				                       audio: false,
+				                       video: true,
+			                       })
+			         .then((stream) => {
+				         video.srcObject = stream;
+			         })
+			         .catch((error) => {
+				         if (confirm("An error with camera occurred. Do you want to reload?\n" +
+				                     `Error: ${error.name}\n` +
+				                     `Details: ${error.message}`)) {
+					         location.reload();
+				         }
+			         });
 		});
 	});
 	

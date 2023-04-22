@@ -34,6 +34,16 @@ module.exports = [
 		mode:    devMode,
 	},
 	{
+		name:    "shared",
+		entry:   "./js/shared.js",
+		output:  {
+			path:     path.resolve(__dirname, "dist"),
+			filename: "shared.bundle.js",
+		},
+		devtool: "eval-source-map",
+		mode:    devMode,
+	},
+	{
 		name:    "cameras",
 		entry:   "./js/cameras.js",
 		output:  {
@@ -44,11 +54,11 @@ module.exports = [
 		mode:    devMode,
 	},
 	{
-		name:    "shared",
-		entry:   "./js/shared.js",
+		name:    "faceLandmarks",
+		entry:   "./js/faceLandmarks.js",
 		output:  {
 			path:     path.resolve(__dirname, "dist"),
-			filename: "shared.bundle.js",
+			filename: "faceLandmarks.bundle.js",
 		},
 		devtool: "eval-source-map",
 		mode:    devMode,
